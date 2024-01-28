@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.2.0/dist/aframe-extras.min.js"></script>
+    <script src="gesture-detector.js"></script>
+    <script src="gesture-handler.js"></script>
+
+    <style>
+      body {
+        overflow: hidden;
+      }
+
+      .buttons {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 5em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+      }
+
+      .say-hi-button {
+        padding: 0.25em;
+        border-radius: 4px;
+        border: none;
+        background: white;
+        color: black;
+        width: 4em;
+        height: 2em;
+      }
+    </style>
+  </head>
+
+  <body>
+    <a-scene
+      arjs
+      embedded
+      renderer="logarithmicDepthBuffer: true;"
+      vr-mode-ui="enabled: false"
+      gesture-detector
+      id="scene"
+      loading-screen="enabled: true"
+    >
+      <a-assets>
+        <a-asset-item
+          id="fatdeposit"
+          src="heartmodel/fatdeposit.gltf"
+        ></a-asset-item>
+        <a-asset-item
+          id="redminor"
+          src="heartmodel/redminor.gltf"
+        ></a-asset-item>
+        <a-asset-item
+          id="blueminor"
+          src="heartmodel/blueminor.gltf"
+        ></a-asset-item>
+        <a-asset-item id="la" src="heartmodel/leftatrium.gltf"></a-asset-item>
+        <a-asset-item id="ra" src="heartmodel/rightatrium.gltf"></a-asset-item>
+        <a-asset-item
+          id="lv"
+          src="heartmodel/diseases/HLHS/leftventricle.gltf"
+        ></a-asset-item>
+        <a-asset-item
+          id="rv"
+          src="heartmodel/rightventricle.gltf"
+        ></a-asset-item>
+        <a-asset-item id="sanvan" src="heartmodel/sanvan.gltf"></a-asset-item>
+        <a-asset-item
+          id="pm"
+          src="heartmodel/papilarymuscle.gltf"
+        ></a-asset-item>
+        <a-asset-item
+          id="pv1"
+          src="heartmodel/pulvalve/pv1.gltf"
+        ></a-asset-item>
+        <a-asset-item
+          id="pv2"
+          src="heartmodel/pulvalve/pv2.gltf"
+        ></a-asset-item>
+        <a-asset-item
+          id="pv3"
+          src="heartmodel/pulvalve/pv3.gltf"
+        ></a-asset-item>
+        <a-asset-item
+          id="pv4"
+          src="heartmodel/pulvalve/pv4.gltf"
+        ></a-asset-item>
+        <a-asset-item
+          id="pv5"
+          src="heartmodel/pulvalve/pv5.gltf"
+        ></a-asset-item>
+        <a-asset-item
+          id="pv6"
+          src="heartmodel/pulvalve/pv6.gltf"
+        ></a-asset-item>
+        <a-asset-item id="bicus" src="heartmodel/bicuspid.gltf"></a-asset-item>
+        <a-asset-item id="tc1" src="heartmodel/cuspid/tc1.gltf"></a-asset-item>
+        <a-asset-item id="tc2" src="heartmodel/cuspid/tc2.gltf"></a-asset-item>
+        <a-asset-item id="tc3" src="heartmodel/cuspid/tc3.gltf"></a-asset-item>
+        <a-asset-item id="bc1" src="heartmodel/diseases/HLHS/bicuspid1.gltf"></a-asset-item>
+        <a-asset-item id="bc2" src="heartmodel/diseases/HLHS/bicuspid2.gltf"></a-asset-item>
+        <a-asset-item
+          id="venacava"
+          src="heartmodel/venacava.gltf"
+        ></a-asset-item>
+        <a-asset-item
+          id="ductus"
+          src="heartmodel/diseases/HLHS/ductus.gltf"
+        ></a-asset-item>
+        <a-asset-item
+          id="pulmonaryartery"
+          src="heartmodel/diseases/HLHS/pulmonaryartery.gltf"
+        ></a-asset-item>
+        <a-asset-item id="arota" src="heartmodel/diseases/HLHS/arota.gltf"></a-asset-item>
+        <a-asset-item
+          id=" pulmonaryveins"
+          src="heartmodel/pulmonaryveins.gltf"
+        ></a-asset-item>
+      </a-assets>
+
+      <a-marker
+        preset="hiro"
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        id="markerA"
+      >
+        <a-entity
+          id="venacava1"
+          gltf-model="#venacava"
+          position="0 0 0"
+          scale="1 1 1"
+          class="clickable"
+          gesture-handler
+          model-opacity="1"
+        >
+        </a-entity>
+
+        <a-entity
+          id="ductus1"
+          gltf-model="#ductus"
+          position="0 0 0"
+          scale="1 1 1"
+          class="clickable"
+          gesture-handler
+          model-opacity="1"
+        >
+        </a-entity>
+
+        <a-entity
+          id="pulmonaryartery1"
+          gltf-model="#pulmonaryartery"
+          position="0 0 0"
+          scale="1 1 1"
+          class="clickable"
+          gesture-handler
+          model-opacity="1"
+        >
+        </a-entity>
+
+        <a-entity
+          id="arota1"
+          gltf-model="#arota"
+          position="0 0 0"
+          scale="1 1 1"
+          class="clickable"
+          gesture-handler
+          model-opacity="1"
+        >
+        </a-entity>
+
+        <a-entity
+          id="pulmonaryveins1"
+          gltf-model="# pulmonaryveins"
+          position="0 0 0"
+          scale="1 1 1"
+          class="clickable"
+          gesture-handler
+          model-opacity="1"
+        >
+        </a-entity>
+
+        <a-entity
+          id="pv11"
+          gltf-model="#pv1"
+          position="0 0 0"
+          scale="1 1 1"
+          class="clickable"
+          gesture-handler
+          animation-mixer="clip :  Key.104Action ; timeScale:2"
+          model-opacity="1"
+        >
+        </a-entity>
+        <a-entity
+          id="pv21"
+          gltf-model="#pv2"
+          position="0 0 0"
+          scale="1 1 1"
+          class="clickable"
+          gesture-handler
+          animation-mixer="clip :  Key.105Action ; timeScale:2"
+          model-opacity="1"
+        >
+        </a-entity>
+        <a-entity
+          id="pv31"
+          gltf-model="#pv3"
+          position="0 0 0"
+          scale="1 1 1"
+          class="clickable"
+          gesture-handler
+          animation-mixer="clip :  Key.106Action ; timeScale:2"
+          model-opacity="1"
+        >
+        </a-entity>
+        <a-entity
+          id="pv41"
+          gltf-model="#pv4"
+          position="0 0 0"
+          scale="1 1 1"
+          class="clickable"
+          gesture-handler
+          animation-mixer="clip :  Key.109Action ; timeScale:2"
+          model-opacity="1"
+        >
+        </a-entity>
+
+        <a-entity
+          id="pv51"
+          gltf-model="#pv5"
+          position="0 0 0"
+          scale="1 1 1"
+          class="clickable"
+          gesture-handler
+          animation-mixer="clip :  Key.107Action ; timeScale:2"
+          model-opacity="1"
+        >
+        </a-entity>
+        <a-entity
+          id="pv61"
+          gltf-model="#pv6"
+          position="0 0 0"
+          scale="1 1 1"
+          class="clickable"
+          gesture-handler
+          animation-mixer="clip :  Key.108Action ; timeScale:2"
+          model-opacity="1"
+        >
+        </a-entity>
+        <a-entity
+          id="bc11"
+          gltf-model="#bc1"
+          position="0 0 0"
+          scale="1 1 1"
+          class="clickable"
+          gesture-handler
+          model-opacity="1"
+        >
+        </a-entity>
+        <a-entity
+          id="bc21"
+          gltf-model="#bc2"
+          position="0 0 0"
+          scale="1 1 1"
+          class="clickable"
+          gesture-handler
+          model-opacity="1"
+        >
+        </a-entity>
+        <a-entity
+          id="tc11"
+          gltf-model="#tc1"
+          position="0 0 0"
+          scale="1 1 1"
+          class="clickable"
+          gesture-handler
+          animation-mixer="clip : Key.114Action ; timeScale:2"
+          model-opacity="1"
+        >
+        </a-entity>
+        <a-entity
+          id="tc21"
+          gltf-model="#tc2"
+          position="0 0 0"
+          scale="1 1 1"
+          class="clickable"
+          gesture-handler
+          animation-mixer="clip : Key.113Action ; timeScale:2"
+          model-opacity="1"
+        >
+        </a-entity>
+        <a-entity
+          id="tc31"
+          gltf-model="#tc3"
+          position="0 0 0"
+          scale="1 1 1"
+          class="clickable"
+          gesture-handler
+          animation-mixer="clip : Key.112Action ; timeScale:2"
+          model-opacity="1"
+        >
+        </a-entity>
+        <a-entity
+          id="pm1"
+          gltf-model="#pm"
+          position="0 0 0"
+          scale="1 1 1"
+          class="clickable"
+          gesture-handler
+          animation-mixer="clip : Key.115Action ; timeScale:2"
+          model-opacity="1"
+        >
+        </a-entity>
+        <a-entity
+          id="sanvan1"
+          gltf-model="#sanvan"
+          position="0 0 0"
+          scale="1 1 1"
+          class="clickable"
+          gesture-handler
+          animation-mixer="clip : Key.123Action ; timeScale:2"
+          model-opacity="1"
+        >
+        </a-entity>
+
+        <a-entity
+          id="fat1"
+          gltf-model="#fatdeposit"
+          position="0 0 0"
+          scale="1 1 1"
+          class="clickable"
+          gesture-handler
+          animation-mixer="clip : Key.122Action ; timeScale:2"
+          model-opacity="1"
+        >
+        </a-entity>
+
+        <a-entity
+          id="red1"
+          gltf-model="#redminor"
+          position="0 0 0"
+          scale="1 1 1"
+          class="clickable"
+          gesture-handler
+          animation-mixer="clip : Key.117Action ; timeScale:2"
+          model-opacity="1"
+        >
+        </a-entity>
+
+        <a-entity
+          id="blue1"
+          gltf-model="#blueminor"
+          position="0 0 0"
+          scale="1 1 1"
+          class="clickable"
+          gesture-handler
+          animation-mixer="clip : Key.120Action ; timeScale:2"
+          model-opacity="1"
+        >
+        </a-entity>
+
+        <a-entity
+          id="la1"
+          gltf-model="#la"
+          position="0 0 0"
+          scale="1 1 1"
+          class="clickable"
+          gesture-handler
+          animation-mixer="clip : Key.025Action ; timeScale:2"
+          model-opacity="1"
+        >
+        </a-entity>
+
+        <a-entity
+          id="ra1"
+          gltf-model="#ra"
+          position="0 0 0"
+          scale="1 1 1"
+          class="clickable"
+          gesture-handler
+          animation-mixer="clip : Key.058Action ; timeScale:2"
+          model-opacity="1"
+        >
+        </a-entity>
+
+        <a-entity
+          id="lv1"
+          gltf-model="#lv"
+          position="0 0 0"
+          scale="1 1 1"
+          class="clickable"
+          gesture-handler
+          animation-mixer="clip : Key.119Action ; timeScale:2"
+          model-opacity="1"
+        >
+        </a-entity>
+
+        <a-entity
+          id="rv1"
+          gltf-model="#rv"
+          position="0 0 0"
+          scale="1 1 1"
+          class="clickable"
+          gesture-handler
+          animation-mixer="clip : Key.102Action ; timeScale:2"
+          model-opacity="1"
+        >
+        </a-entity>
+      </a-marker>
+      <a-entity camera></a-entity>
+    </a-scene>
+    <script>
+      AFRAME.registerComponent("cubewe", {
+        init: function () {
+          var el = this.el; // Entity.
+          var geometry = new THREE.BoxGeometry(1, 1, 1); // Create a cube geometry.
+          var material = new THREE.MeshBasicMaterial({ color: 0xff0000 }); // Create a red material.
+          var cube = new THREE.Mesh(geometry, material); // Create a mesh from the geometry and material.
+          el.setObject3D("mesh", cube); // Set the mesh as the entity's object3D.
+        },
+      });
+
+      AFRAME.registerComponent("model-opacity", {
+        schema: { default: 1.0 },
+        init: function () {
+          this.el.addEventListener("model-loaded", this.update.bind(this));
+        },
+        update: function () {
+          var mesh = this.el.getObject3D("mesh");
+          var data = this.data;
+          if (!mesh) {
+            return;
+          }
+          mesh.traverse(function (node) {
+            if (node.isMesh) {
+              node.material.opacity = data;
+              node.material.transparent = data < 1;
+              node.material.needsUpdate = true;
+            }
+          });
+        },
+      });
+
+      //https://cpetry.github.io/NormalMap-Online/
+    </script>
+  </body>
+</html>

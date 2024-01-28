@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display JSON Data</title>
+</head>
+<body>
+    <h1>Users</h1>
+    <div><p id="change">this is element</p></div>
+    <ul id="userList"></ul>
+
+    <script>
+        // Fetch the JSON file
+        const urlParams = new URLSearchParams(window.location.search);
+        const data1 = urlParams.get('data');
+        // Use the data as needed
+        console.log(data1);
+        fetch('data.json')
+            .then(response => response.json()) // Parse the JSONp
+            .then(data => {
+                // Iterate over each object in the JSON array
+                console.log(data[data1]);
+                if (data1){
+                    document.getElementById('change').textContent = data[data1].name;
+                }
+                data.forEach(user => {
+                    // Create a list item element
+                    const li = document.createElement('li');
+                    // Set its text content to user's name and age
+                    li.textContent = `${user.name} - ${user.age}`;
+                    // Append the list item to the unordered list
+                    document.getElementById('userList').appendChild(li);
+                });
+            })
+            .catch(error => console.error('Error fetching JSON:', error));
+    </script>
+</body>
+</html>

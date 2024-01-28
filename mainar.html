@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>CardioAR</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.2.0/dist/aframe-extras.min.js"></script>
+    <script src="files/gesture-detector.js"></script>
+    <script src="files/gesture-handler.js"></script>
+    <style>
+      #cell {
+        width: 80vw;
+        height: 80vh;
+      }
+    </style>
+  </head>
+
+  <body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">CardioAR</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="https://stemkoski.github.io/AR-Examples/markers/hiro.png"
+                >Marker</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="files/normalheart.html"
+                >Healthy Heart</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="https://aruniankur.github.io/heartmodel2/"
+                >3D onScreen</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"
+                >About Us</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <br />
+    <div id="cell" class="mx-auto">
+      <iframe
+        id="myIframe"
+        src="files/normalheart.html"
+        title="video"
+        width="100%"
+        height="100%"
+      ></iframe>
+    </div>
+    <div class="container-lg my-5">
+      <h1>Settings and Info</h1>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="p-3 bg-primary text-light"><h4>About this Page</h4></div>
+          <p>Overall Opacity</p>
+          <div
+            class="btn-group"
+            role="group"
+            aria-label="Basic radio toggle button group"
+          >
+            <input
+              type="radio"
+              class="btn-check"
+              name="btnradio"
+              id="btnradio1"
+              autocomplete="off"
+            />
+            <label
+              class="btn btn-outline-primary"
+              for="btnradio1"
+              onclick="opacitycontroller(0, ['#la1','#ra1','#lv1','#rv1','#arota1','#venacava1','#ductus1','#pulmonaryartery1','#pulmonaryveins1','#red1','#blue1','#sanvan1','#fat1','#pv11','#pv21','#pv31','#pv41','#pv51','#pv61','#bc11','#bc21','#tc11','#tc21','#tc31','#pm1'])"
+              >Opacity 0</label
+            >
+
+            <input
+              type="radio"
+              class="btn-check"
+              name="btnradio"
+              id="btnradio2"
+              autocomplete="off"
+              onclick="opacitycontroller(0.5, ['#la1','#ra1','#lv1','#rv1','#arota1','#venacava1','#ductus1','#pulmonaryartery1','#pulmonaryveins1','#red1','#blue1','#sanvan1','#fat1','#pv11','#pv21','#pv31','#pv41','#pv51','#pv61','#bc11','#bc21','#tc11','#tc21','#tc31','#pm1'])"
+            />
+            <label class="btn btn-outline-primary" for="btnradio2"
+              >opacity 0.5</label
+            >
+
+            <input
+              type="radio"
+              class="btn-check"
+              name="btnradio"
+              id="btnradio3"
+              autocomplete="off"
+              checked
+              onclick="opacitycontroller(1, ['#la1','#ra1','#lv1','#rv1','#arota1','#venacava1','#ductus1','#pulmonaryartery1','#pulmonaryveins1','#red1','#blue1','#sanvan1','#fat1','#pv11','#pv21','#pv31','#pv41','#pv51','#pv61','#bc11','#bc21','#tc11','#tc21','#tc31','#pm1'])"
+            />
+            <label class="btn btn-outline-primary" for="btnradio3"
+              >Opacity 1</label
+            >
+          </div>
+          <br />
+          <br />
+          <label for="customRange3" class="form-label">Speed</label>
+          <input
+            type="range"
+            class="form-range"
+            min="0"
+            max="1"
+            step="0.1"
+            id="customRange3"
+            value="1"
+            onchange="speedcontroller(this.value,['la1','ra1','lv1','rv1','red1','blue1','sanvan1','fat1','pv11','pv21','pv31','pv41','pv51','pv61','bc11','bc21','tc11','tc21','tc31','pm1'])"
+          />
+        </div>
+        <div class="col-md-6">
+          <div class="p-3 bg-primary text-light">
+            <h4>Motivation and How to Use</h4>
+          </div>
+          <div class="container mt-3">
+            <h2>Simple Collapsible</h2>
+            <p>
+              Click on the button to toggle between showing and hiding content.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="container-lg my-3">
+        <h2>Settings</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <div
+              type="button"
+              class="p-3 bg-primary bg-gradient text-white rounded-3 border-bottom"
+              data-bs-toggle="collapse"
+              data-bs-target="#demo1"
+            >
+              Basic
+            </div>
+            <div id="demo1" class="collapse">
+            </div>
+            <div id="demo1" class="collapse">
+              <label for="customRange3" class="form-label">Heart Muscles</label>
+              <input
+                type="range"
+                class="form-range"
+                min="0"
+                max="1"
+                step="0.1"
+                value="1"
+                id="customRange3"
+                onchange="opacitycontroller(this.value, ['#la1','#ra1','#lv1','#rv1'])"
+              />
+            </div>
+            <div id="demo1" class="collapse">
+              <label for="customRange3" class="form-label"
+                >Large Blood Vessels</label
+              >
+              <input
+                type="range"
+                class="form-range"
+                min="0"
+                max="1"
+                step="0.1"
+                value="1"
+                id="customRange3"
+                onchange="opacitycontroller(this.value, ['#arota1','#venacava1','#ductus1','#pulmonaryartery1','#pulmonaryveins1'])"
+              />
+            </div>
+
+            <div id="demo1" class="collapse">
+              <label for="customRange3" class="form-label"
+                >Small blood Vessels</label
+              >
+              <input
+                type="range"
+                class="form-range"
+                min="0"
+                max="1"
+                step="0.1"
+                value="1"
+                id="customRange3"
+                onchange="opacitycontroller(this.value, ['#red1','#blue1'])"
+              />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div
+              type="button"
+              class="p-3 bg-primary bg-gradient text-white rounded-3 border-bottom"
+              data-bs-toggle="collapse"
+              data-bs-target="#demo1"
+            >
+              Basic
+            </div>
+            <div id="demo1" class="collapse">
+            </div>
+            <div id="demo1" class="collapse">
+              <label for="customRange3" class="form-label">SAN And VAN</label>
+              <input
+                type="range"
+                class="form-range"
+                min="0"
+                max="1"
+                step="0.1"
+                id="customRange3"
+                value="1"
+                onchange="opacitycontroller(this.value, ['#sanvan1'])"
+              />
+            </div>
+            <div id="demo1" class="collapse">
+              <label for="customRange3" class="form-label">Fat Deposit</label>
+              <input
+                type="range"
+                class="form-range"
+                min="0"
+                max="1"
+                step="0.1"
+                id="customRange3"
+                value="1"
+                onchange="opacitycontroller(this.value, ['#fat1'])"
+              />
+            </div>
+            <div id="demo1" class="collapse">
+              <label for="customRange3" class="form-label"
+                >Internal Parts</label
+              >
+              <input
+                type="range"
+                class="form-range"
+                min="0"
+                max="1"
+                step="0.1"
+                value="1"
+                id="customRange3"
+                onchange="opacitycontroller(this.value, ['#pv11','#pv21','#pv31','#pv41','#pv51','#pv61','#bc11','#bc21','#tc11','#tc21','#tc31','#pm1'])"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="row my-">
+          <div class="col-md-6">
+            <div
+              type="button"
+              class="p-3 bg-primary bg-gradient text-white rounded-3 border-bottom"
+              data-bs-toggle="collapse"
+              data-bs-target="#demo3"
+            >
+              Heart Muscles
+            </div>
+            <div id="demo3" class="collapse">
+            </div>
+            <div id="demo3" class="collapse">
+              <label for="customRange3" class="form-label">Left Atrium</label>
+              <input
+                type="range"
+                class="form-range"
+                min="0"
+                max="1"
+                step="0.1"
+                id="customRange3"
+                value="1"
+                onchange="opacitycontroller(this.value, ['#la1'])"
+              />
+            </div>
+            <div id="demo3" class="collapse">
+              <label for="customRange3" class="form-label">Right Atrium</label>
+              <input
+                type="range"
+                class="form-range"
+                min="0"
+                max="1"
+                step="0.1"
+                id="customRange3"
+                value="1"
+                onchange="opacitycontroller(this.value, ['#ra1'])"
+              />
+            </div>
+            <div id="demo3" class="collapse">
+              <label for="customRange3" class="form-label"
+                >Left Ventricle</label
+              >
+              <input
+                type="range"
+                class="form-range"
+                min="0"
+                max="1"
+                step="0.1"
+                id="customRange3"
+                value="1"
+                onchange="opacitycontroller(this.value, ['#lv1'])"
+              />
+            </div>
+            <div id="demo3" class="collapse">
+              <label for="customRange3" class="form-label"
+                >Right Ventricle</label
+              >
+              <input
+                type="range"
+                class="form-range"
+                min="0"
+                max="1"
+                step="0.1"
+                id="customRange3"
+                value="1"
+                onchange="opacitycontroller(this.value, ['#rv1'])"
+              />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div
+              type="button"
+              class="p-3 bg-primary bg-gradient text-white rounded-3 border-bottom"
+              data-bs-toggle="collapse"
+              data-bs-target="#demo3"
+            >
+              Large Blood vessels
+            </div>
+            <div id="demo3" class="collapse">
+            </div>
+            <div id="demo3" class="collapse">
+              <label for="customRange3" class="form-label">Vena Cava</label>
+              <input
+                type="range"
+                class="form-range"
+                min="0"
+                max="1"
+                step="0.1"
+                id="customRange3"
+                value="1"
+                onchange="opacitycontroller(this.value, ['#venacava1'])"
+              />
+            </div>
+            <div id="demo3" class="collapse">
+              <label for="customRange3" class="form-label"
+                >pulmonary Artery</label
+              >
+              <input
+                type="range"
+                class="form-range"
+                min="0"
+                max="1"
+                step="0.1"
+                id="customRange3"
+                value="1"
+                onchange="opacitycontroller(this.value, ['#pulmonaryartery1'])"
+              />
+            </div>
+            <div id="demo3" class="collapse">
+              <label for="customRange3" class="form-label"
+                >pulmonary Veins</label
+              >
+              <input
+                type="range"
+                class="form-range"
+                min="0"
+                max="1"
+                step="0.1"
+                id="customRange3"
+                value="1"
+                onchange="opacitycontroller(this.value, ['#pulmonaryveins1'])"
+              />
+            </div>
+            <div id="demo3" class="collapse">
+              <label for="customRange3" class="form-label">Arota</label>
+              <input
+                type="range"
+                class="form-range"
+                min="0"
+                max="1"
+                step="0.1"
+                id="customRange3"
+                value="1"
+                onchange="opacitycontroller(this.value, ['#arota1','#ductus1'])"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div
+              type="button"
+              class="p-3 bg-primary bg-gradient text-white rounded-3 border-bottom"
+              data-bs-toggle="collapse"
+              data-bs-target="#demo5"
+            >
+              Internal Parts
+            </div>
+            <div id="demo5" class="collapse">
+            </div>
+            <div id="demo5" class="collapse">
+              <label for="customRange3" class="form-label"
+                >Aortic Valves and Pulmonary Valve</label
+              >
+              <input
+                type="range"
+                class="form-range"
+                min="0"
+                max="1"
+                step="0.1"
+                id="customRange3"
+                value="1"
+                onchange="opacitycontroller(this.value, ['#pv11','#pv21','#pv31','#pv41','#pv51','#pv61'])"
+              />
+            </div>
+            <div id="demo5" class="collapse">
+              <label for="customRange3" class="form-label"
+                >Mitral Valve and Tricuspid Valve</label
+              >
+              <input
+                type="range"
+                class="form-range"
+                min="0"
+                max="1"
+                step="0.1"
+                id="customRange3"
+                value="1"
+                onchange="opacitycontroller(this.value, ['#bc11','#bc21','#tc11','#tc21','#tc31'])"
+              />
+            </div>
+            <div id="demo5" class="collapse">
+              <label for="customRange3" class="form-label"
+                >papilary Muscle</label
+              >
+              <input
+                type="range"
+                class="form-range"
+                min="0"
+                max="1"
+                step="0.1"
+                id="customRange3"
+                value="1"
+                onchange="opacitycontroller(this.value, ['#pm1'])"
+              />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div
+              type="button"
+              class="p-3 bg-primary bg-gradient text-white rounded-3 border-bottom"
+              data-bs-toggle="collapse"
+              data-bs-target="#demo5"
+            >
+              Outer Small parts
+            </div>
+            <div id="demo5" class="collapse">
+            </div>
+            <div id="demo5" class="collapse">
+              <label for="customRange3" class="form-label"
+                >Heart Circulatory System</label
+              >
+              <input
+                type="range"
+                class="form-range"
+                min="0"
+                max="1"
+                step="0.1"
+                id="customRange3"
+                value="1"
+                onchange="opacitycontroller(this.value, ['#red1','#blue1'])"
+              />
+            </div>
+            <div id="demo5" class="collapse">
+              <label for="customRange3" class="form-label">Fat Deposit</label>
+              <input
+                type="range"
+                class="form-range"
+                min="0"
+                max="1"
+                step="0.1"
+                id="customRange3"
+                value="1"
+                onchange="opacitycontroller(this.value, ['#fat1'])"
+              />
+            </div>
+            <div id="demo5" class="collapse">
+              <label for="customRange3" class="form-label">SAN - VAN</label>
+              <input
+                type="range"
+                class="form-range"
+                min="0"
+                max="1"
+                step="0.1"
+                id="customRange3"
+                value="1"
+                onchange="opacitycontroller(this.value, ['#sanvan1'])"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const data1 = urlParams.get("code");
+        // Use the data as needed
+        const iframe = document.getElementById("myIframe");
+        if (data1) {
+          //console.log(data1);
+          fetch("data.json")
+            .then((response) => response.json()) // Parse the JSON
+            .then((data) => {
+              const user = data[data1];
+              ///console.log(data);
+              iframe.src = user.url;
+            })
+        }
+
+        // Function to log the slider value
+        function opacitycontroller(value, lst) {
+          value1 = String(value);
+          var iframe = document.getElementById("myIframe");
+          var iframeDocument =
+            iframe.contentDocument || iframe.contentWindow.document;
+          //console.log("this is the iframe");
+          if (iframeDocument) {
+            for (var i = 0; i < lst.length; i++) {
+              iframeDocument
+                .querySelector(lst[i])
+                .setAttribute("model-opacity", value1);
+            }
+            //console.log("the value is " + value1);
+          }
+        }
+
+        function speedcontroller(value, lst) {
+          var iframe = document.getElementById("myIframe");
+          var iframeDocument =
+            iframe.contentDocument || iframe.contentWindow.document;
+          //console.log("this is the iframe");
+          if (iframeDocument) {
+            for (var i = 0; i < lst.length; i++) {
+              var pv11Entity = iframeDocument.getElementById(lst[i]);
+              var animationMixer = pv11Entity.components["animation-mixer"];
+              animationMixer.timeScale = parseFloat(value);
+            }
+            //console.log("the value is " + value1);
+          }
+        }
+      </script>
+    </div>
+    <script>
+      function changeValueInIframe() {
+        // Get the iframe element
+        var iframe = document.getElementById("myIframe");
+        // Access the iframe's contentDocument
+        var iframeDocument =
+          iframe.contentDocument || iframe.contentWindow.document;
+        console.log("this is the iframe");
+        console.log(iframeDocument);
+        // Access the element inside the iframe and change its value
+        var elementInIframe = iframeDocument.getElementById("elementInIframe");
+        console.log(elementInIframe);
+        if (elementInIframe) {
+          elementInIframe.textContent = "New Value";
+        }
+      }
+      //https://cpetry.github.io/NormalMap-Online/
+    </script>
+  </body>
+</html>

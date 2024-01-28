@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CardioAR</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <img
+          src="files/untitled.png"
+          alt="Your Icon"
+          width="30"
+          height="30"
+          class="d-inline-block align-text-top"
+        />
+        <a class="navbar-brand mx-2" href="/">CardioAR</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="https://stemkoski.github.io/AR-Examples/markers/hiro.png"
+                >Marker</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="mainar.html"
+                >Healthy Heart</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="https://aruniankur.github.io/heartmodel2/"
+                >3D onScreen</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"
+                >About Us</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <br />
+    <div id="app"></div>
+    <div class="m-5">
+      <div class="container-lg">
+        <div class="row justify-content-center">
+          <div class="col-md-5 text-center text-md-start mb-3">
+            <h2>
+              <div class="display-3">CardioAR Insights</div>
+              <div class="display-5 text-muted">
+                Exploring the Heart and Its Ailments
+              </div>
+            </h2>
+            <a
+              href="mainar.html"
+              class="btn btn-secondary btn-lg m-1"
+              >View AR</a
+            >
+            <a href="/" class="btn btn-secondary btn-lg m-1">Youtube</a>
+          </div>
+          <div class="col-md-5 text-center">
+            <img
+              class=""
+              src="files/untitled.png"
+              alt="ebook cover"
+              class="img-fluid"
+              style="width: 100%; height: 100%"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <br />
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col-md-5">
+          <img
+            class=""
+            src="files/untitled.png"
+            alt="ebook cover"
+            class="img-fluid"
+            style="width: 100%; height: 100%"
+          />
+        </div>
+        <div class="col-md-5">
+          <h1>Scan this QR to open this website in Phone.</h1>
+          <h1>Open the Marker in a fixed Screen.</h1>
+          <h1>Choose the disease and Enjoy the AR</h1>
+        </div>
+      </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <div class="container mt-6">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg
+              class="bd-placeholder-img card-img-top"
+              width="100%"
+              height="225"
+              xmlns="http://www.w3.org/2000/svg"
+              role="img"
+              aria-label="Placeholder: Thumbnail"
+              preserveAspectRatio="xMidYMid slice"
+              focusable="false"
+            >
+              <title>Placeholder</title>
+              <rect width="100%" height="100%" fill="#55595c"></rect>
+            </svg>
+            <div class="card-body">
+              <h3>Normal Heart</h3>
+              <h5>Normal Heart</h5>
+              <p class="card-text">
+                The heart, a fist-sized marvel nestled in our chest, powers our
+                existence.Comprising four chambers, it orchestrates a symphony
+                of pumping.
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a
+                    href="mainar.html?code=0"
+                    class="btn btn-secondary btn-lg m-1"
+                    >View AR</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg
+              class="bd-placeholder-img card-img-top"
+              width="100%"
+              height="225"
+              xmlns="http://www.w3.org/2000/svg"
+              role="img"
+              aria-label="Placeholder: Thumbnail"
+              preserveAspectRatio="xMidYMid slice"
+              focusable="false"
+            >
+              <title>Placeholder</title>
+              <rect width="100%" height="100%" fill="#55595c"></rect>
+            </svg>
+            <div class="card-body">
+              <h3>Transposition in Heart</h3>
+              <h5>Transposition of the Great Arteries</h5>
+              <p class="card-text">
+                In this condition, the aorta and pulmonary artery are switched,
+                resulting in oxygen-poor blood being circulated to the body.
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a
+                    href="mainar.html?code=1"
+                    class="btn btn-secondary btn-lg m-1"
+                    >View AR</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg
+              class="bd-placeholder-img card-img-top"
+              width="100%"
+              height="225"
+              xmlns="http://www.w3.org/2000/svg"
+              role="img"
+              aria-label="Placeholder: Thumbnail"
+              preserveAspectRatio="xMidYMid slice"
+              focusable="false"
+            >
+              <title>Placeholder</title>
+              <rect width="100%" height="100%" fill="#55595c"></rect>
+            </svg>
+            <div class="card-body">
+              <h3>Pulmonary Stenosis in Heart</h3>
+              <h5>Pulmonary Stenosis</h5>
+              <p class="card-text">
+                This condition affects the pulmonary valve, limiting the flow of
+                blood from the right ventricle to the pulmonary artery.
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a
+                    href="mainar.html?code=2"
+                    class="btn btn-secondary btn-lg m-1"
+                    >View AR</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg
+              class="bd-placeholder-img card-img-top"
+              width="100%"
+              height="225"
+              xmlns="http://www.w3.org/2000/svg"
+              role="img"
+              aria-label="Placeholder: Thumbnail"
+              preserveAspectRatio="xMidYMid slice"
+              focusable="false"
+            >
+              <title>Placeholder</title>
+              <rect width="100%" height="100%" fill="#55595c"></rect>
+            </svg>
+            <div class="card-body">
+              <h3>Aortic Stenosis in Heart</h3>
+              <h5>Aortic Stenosis</h5>
+              <p class="card-text">
+                Aortic stenosis is a heart condition characterized by the
+                narrowing of the aortic valve, restricting blood flow from the
+                heart to the body.
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a
+                    href="mainar.html?code=3"
+                    class="btn btn-secondary btn-lg m-1"
+                    >View AR</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg
+              class="bd-placeholder-img card-img-top"
+              width="100%"
+              height="225"
+              xmlns="http://www.w3.org/2000/svg"
+              role="img"
+              aria-label="Placeholder: Thumbnail"
+              preserveAspectRatio="xMidYMid slice"
+              focusable="false"
+            >
+              <title>Placeholder</title>
+              <rect width="100%" height="100%" fill="#55595c"></rect>
+            </svg>
+            <div class="card-body">
+              <h3>Coarctation</h3>
+              <h5>Coarctation of the Aorta</h5>
+              <p class="card-text">
+                This is a narrowing of the aorta, the body's largest artery,
+                which can obstruct blood flow to the lower part of the body.
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a
+                    href="mainar.html?code=4"
+                    class="btn btn-secondary btn-lg m-1"
+                    >View AR</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg
+              class="bd-placeholder-img card-img-top"
+              width="100%"
+              height="225"
+              xmlns="http://www.w3.org/2000/svg"
+              role="img"
+              aria-label="Placeholder: Thumbnail"
+              preserveAspectRatio="xMidYMid slice"
+              focusable="false"
+            >
+              <title>Placeholder</title>
+              <rect width="100%" height="100%" fill="#55595c"></rect>
+            </svg>
+            <div class="card-body">
+              <h3>PDA in Heart</h3>
+              <h5>Patent Ductus Arteriosus</h5>
+              <p class="card-text">
+                PDA is the persistence of a fetal blood vessel (ductus
+                arteriosus) that should normally close after birth, allowing
+                blood to bypass the lungs.
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="mainar.html?code=5" class="btn btn-secondary btn-lg m-1"
+                    >View AR</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg
+              class="bd-placeholder-img card-img-top"
+              width="100%"
+              height="225"
+              xmlns="http://www.w3.org/2000/svg"
+              role="img"
+              aria-label="Placeholder: Thumbnail"
+              preserveAspectRatio="xMidYMid slice"
+              focusable="false"
+            >
+              <title>Placeholder</title>
+              <rect width="100%" height="100%" fill="#55595c"></rect>
+            </svg>
+            <div class="card-body">
+              <h3>Aortic Insufficiency in Heart</h3>
+              <h5>Aortic Insufficiency (Regurgitation)</h5>
+              <p class="card-text">
+                This condition involves the aortic valve not closing properly, allowing blood to flow back into the left ventricle.
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="mainar.html?code=6" class="btn btn-secondary btn-lg m-1"
+                    >View AR</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg
+              class="bd-placeholder-img card-img-top"
+              width="100%"
+              height="225"
+              xmlns="http://www.w3.org/2000/svg"
+              role="img"
+              aria-label="Placeholder: Thumbnail"
+              preserveAspectRatio="xMidYMid slice"
+              focusable="false"
+            >
+              <title>Placeholder</title>
+              <rect width="100%" height="100%" fill="#55595c"></rect>
+            </svg>
+            <div class="card-body">
+              <h3>Pulmonary Insufficiency in Heart</h3>
+              <h5>Pulmonary Insufficiency or Regurgitation</h5>
+              <p class="card-text">
+                The pulmonary valve fails to close properly, allowing blood to flow back into the right ventricle.
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="mainar.html?code=7" class="btn btn-secondary btn-lg m-1"
+                    >View AR</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg
+              class="bd-placeholder-img card-img-top"
+              width="100%"
+              height="225"
+              xmlns="http://www.w3.org/2000/svg"
+              role="img"
+              aria-label="Placeholder: Thumbnail"
+              preserveAspectRatio="xMidYMid slice"
+              focusable="false"
+            >
+              <title>Placeholder</title>
+              <rect width="100%" height="100%" fill="#55595c"></rect>
+            </svg>
+            <div class="card-body">
+              <h3>T&BI in Heart</h3>
+              <h5>Tricuspid And Bicuspid Insufficiency (regurgitation) </h5>
+              <p class="card-text">
+                Tricuspid and Bicuspid valve regurgitation is a type of heart valve disease in which the valve between the two right heart chambers and two left heart chambers doesn't close properly.
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="mainar.html?code=8" class="btn btn-secondary btn-lg m-1"
+                    >View AR</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg
+              class="bd-placeholder-img card-img-top"
+              width="100%"
+              height="225"
+              xmlns="http://www.w3.org/2000/svg"
+              role="img"
+              aria-label="Placeholder: Thumbnail"
+              preserveAspectRatio="xMidYMid slice"
+              focusable="false"
+            >
+              <title>Placeholder</title>
+              <rect width="100%" height="100%" fill="#55595c"></rect>
+            </svg>
+            <div class="card-body">
+              <h3>HLHS in Heart</h3>
+              <h5>Hypoplastic Left Heart Syndrome</h5>
+              <p class="card-text">
+                HLHS is a severe condition in which the left side of the heart is underdeveloped, leading to inadequate circulation.
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="mainar.html?code=9" class="btn btn-secondary btn-lg m-1"
+                    >View AR</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg
+              class="bd-placeholder-img card-img-top"
+              width="100%"
+              height="225"
+              xmlns="http://www.w3.org/2000/svg"
+              role="img"
+              aria-label="Placeholder: Thumbnail"
+              preserveAspectRatio="xMidYMid slice"
+              focusable="false"
+            >
+              <title>Placeholder</title>
+              <rect width="100%" height="100%" fill="#55595c"></rect>
+            </svg>
+            <div class="card-body">
+              <h3>ASD in Heart</h3>
+              <h5>Atrial Septal Defect</h5>
+              <p class="card-text">
+                This defect involves a hole in the wall (septum) separating the
+                heart's two upper chambers (atria).
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="mainar.html?code=10" class="btn btn-secondary btn-lg m-1"
+                    >View AR</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg
+              class="bd-placeholder-img card-img-top"
+              width="100%"
+              height="225"
+              xmlns="http://www.w3.org/2000/svg"
+              role="img"
+              aria-label="Placeholder: Thumbnail"
+              preserveAspectRatio="xMidYMid slice"
+              focusable="false"
+            >
+              <title>Placeholder</title>
+              <rect width="100%" height="100%" fill="#55595c"></rect>
+            </svg>
+            <div class="card-body">
+              <h3>VSD in Heart</h3>
+              <h5>Ventricular Septal Defect</h5>
+              <p class="card-text">
+                VSD is a hole in the septum between the heart's two
+                lower chambers (ventricles).
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="mainar.html?code=11" class="btn btn-secondary btn-lg m-1"
+                    >View AR</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <footer class="bd-footer py-4 py-md-5 mt-5 bg-body-tertiary">
+      <div class="container py-4 py-md-5 px-4 px-md-3 text-body-secondary">
+        <div class="row">
+          <div class="col-lg-3 mb-3">
+            <a
+              class="d-inline-flex align-items-center mb-2 text-body-emphasis text-decoration-none"
+              href="/"
+              aria-label="Bootstrap"
+            >
+              <span class="fs-5">CardioAR Insights</span>
+            </a>
+            <ul class="list-unstyled small">
+              <li class="mb-2">
+                Designed and built with all the love in the world by the IIT kharagpur team with the help
+                of our contributors.
+              </li>
+              <li class="mb-2">
+                Code licensed
+                <a
+                  href="https://github.com/twbs/bootstrap/blob/main/LICENSE"
+                  target="_blank"
+                  rel="license noopener"
+                  >MIT</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-2 offset-lg-1 mb-3">
+            <h5>Links</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2"><a href="/">Home</a></li>
+              <li class="mb-2"><a href="/docs/5.3/">Docs</a></li>
+              <li class="mb-2"><a href="/docs/5.3/examples/">Examples</a></li>
+              <li class="mb-2">
+                <a href="https://blog.getbootstrap.com/">Blog</a>
+              </li>
+              <li class="mb-2">
+                <a
+                  href="https://cottonbureau.com/people/bootstrap"
+                  target="_blank"
+                  rel="noopener"
+                  >Swag Store</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-2 mb-3">
+            <h5>Community</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a
+                  href="https://github.com/twbs/bootstrap/issues"
+                  target="_blank"
+                  rel="noopener"
+                  >Issues</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="https://github.com/twbs/bootstrap/discussions"
+                  target="_blank"
+                  rel="noopener"
+                  >Discussions</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="https://github.com/sponsors/twbs"
+                  target="_blank"
+                  rel="noopener"
+                  >Corporate sponsors</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="https://opencollective.com/bootstrap"
+                  target="_blank"
+                  rel="noopener"
+                  >Open Collective</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="https://stackoverflow.com/questions/tagged/bootstrap-5"
+                  target="_blank"
+                  rel="noopener"
+                  >Stack Overflow</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
