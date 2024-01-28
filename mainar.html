@@ -18,7 +18,6 @@
     <script src="files/gesture-handler.js"></script>
     <style>
       #cell {
-        width: 80vw;
         height: 80vh;
       }
     </style>
@@ -88,7 +87,7 @@
       </div>
     </nav>
     <br />
-    <div id="cell" class="mx-auto">
+    <div id="cell" class="col-10 mx-auto">
       <iframe
         id="myIframe"
         src="files/normalheart.html"
@@ -148,27 +147,14 @@
             >
           </div>
           <br />
-          <br />
-          <label for="customRange3" class="form-label">Speed</label>
-          <input
-            type="range"
-            class="form-range"
-            min="0"
-            max="1"
-            step="0.1"
-            id="customRange3"
-            value="1"
-            onchange="speedcontroller(this.value,['la1','ra1','lv1','rv1','red1','blue1','sanvan1','fat1','pv11','pv21','pv31','pv41','pv51','pv61','bc11','bc21','tc11','tc21','tc31','pm1'])"
-          />
         </div>
         <div class="col-md-6">
           <div class="p-3 bg-primary text-light">
             <h4>Motivation and How to Use</h4>
           </div>
           <div class="container mt-3">
-            <h2>Simple Collapsible</h2>
             <p>
-              Click on the button to toggle between showing and hiding content.
+              the objective of this AR application is to provide a deep 
             </p>
           </div>
         </div>
@@ -196,7 +182,7 @@
                 class="form-range"
                 min="0"
                 max="1"
-                step="0.1"
+                step="1"
                 value="1"
                 id="customRange3"
                 onchange="opacitycontroller(this.value, ['#la1','#ra1','#lv1','#rv1'])"
@@ -211,7 +197,7 @@
                 class="form-range"
                 min="0"
                 max="1"
-                step="0.1"
+                step="1"
                 value="1"
                 id="customRange3"
                 onchange="opacitycontroller(this.value, ['#arota1','#venacava1','#ductus1','#pulmonaryartery1','#pulmonaryveins1'])"
@@ -227,7 +213,7 @@
                 class="form-range"
                 min="0"
                 max="1"
-                step="0.1"
+                step="1"
                 value="1"
                 id="customRange3"
                 onchange="opacitycontroller(this.value, ['#red1','#blue1'])"
@@ -252,7 +238,7 @@
                 class="form-range"
                 min="0"
                 max="1"
-                step="0.1"
+                step="1"
                 id="customRange3"
                 value="1"
                 onchange="opacitycontroller(this.value, ['#sanvan1'])"
@@ -265,7 +251,7 @@
                 class="form-range"
                 min="0"
                 max="1"
-                step="0.1"
+                step="1"
                 id="customRange3"
                 value="1"
                 onchange="opacitycontroller(this.value, ['#fat1'])"
@@ -280,7 +266,7 @@
                 class="form-range"
                 min="0"
                 max="1"
-                step="0.1"
+                step="1"
                 value="1"
                 id="customRange3"
                 onchange="opacitycontroller(this.value, ['#pv11','#pv21','#pv31','#pv41','#pv51','#pv61','#bc11','#bc21','#tc11','#tc21','#tc31','#pm1'])"
@@ -307,7 +293,7 @@
                 class="form-range"
                 min="0"
                 max="1"
-                step="0.1"
+                step="1"
                 id="customRange3"
                 value="1"
                 onchange="opacitycontroller(this.value, ['#la1'])"
@@ -320,7 +306,7 @@
                 class="form-range"
                 min="0"
                 max="1"
-                step="0.1"
+                step="1"
                 id="customRange3"
                 value="1"
                 onchange="opacitycontroller(this.value, ['#ra1'])"
@@ -335,7 +321,7 @@
                 class="form-range"
                 min="0"
                 max="1"
-                step="0.1"
+                step="1"
                 id="customRange3"
                 value="1"
                 onchange="opacitycontroller(this.value, ['#lv1'])"
@@ -350,7 +336,7 @@
                 class="form-range"
                 min="0"
                 max="1"
-                step="0.1"
+                step="1"
                 id="customRange3"
                 value="1"
                 onchange="opacitycontroller(this.value, ['#rv1'])"
@@ -375,7 +361,7 @@
                 class="form-range"
                 min="0"
                 max="1"
-                step="0.1"
+                step="1"
                 id="customRange3"
                 value="1"
                 onchange="opacitycontroller(this.value, ['#venacava1'])"
@@ -390,7 +376,7 @@
                 class="form-range"
                 min="0"
                 max="1"
-                step="0.1"
+                step="1"
                 id="customRange3"
                 value="1"
                 onchange="opacitycontroller(this.value, ['#pulmonaryartery1'])"
@@ -405,7 +391,7 @@
                 class="form-range"
                 min="0"
                 max="1"
-                step="0.1"
+                step="1"
                 id="customRange3"
                 value="1"
                 onchange="opacitycontroller(this.value, ['#pulmonaryveins1'])"
@@ -418,7 +404,7 @@
                 class="form-range"
                 min="0"
                 max="1"
-                step="0.1"
+                step="1"
                 id="customRange3"
                 value="1"
                 onchange="opacitycontroller(this.value, ['#arota1','#ductus1'])"
@@ -447,7 +433,7 @@
                 class="form-range"
                 min="0"
                 max="1"
-                step="0.1"
+                step="1"
                 id="customRange3"
                 value="1"
                 onchange="opacitycontroller(this.value, ['#pv11','#pv21','#pv31','#pv41','#pv51','#pv61'])"
@@ -462,7 +448,7 @@
                 class="form-range"
                 min="0"
                 max="1"
-                step="0.1"
+                step="1"
                 id="customRange3"
                 value="1"
                 onchange="opacitycontroller(this.value, ['#bc11','#bc21','#tc11','#tc21','#tc31'])"
@@ -477,7 +463,7 @@
                 class="form-range"
                 min="0"
                 max="1"
-                step="0.1"
+                step="1"
                 id="customRange3"
                 value="1"
                 onchange="opacitycontroller(this.value, ['#pm1'])"
@@ -504,7 +490,7 @@
                 class="form-range"
                 min="0"
                 max="1"
-                step="0.1"
+                step="1"
                 id="customRange3"
                 value="1"
                 onchange="opacitycontroller(this.value, ['#red1','#blue1'])"
@@ -517,7 +503,7 @@
                 class="form-range"
                 min="0"
                 max="1"
-                step="0.1"
+                step="1"
                 id="customRange3"
                 value="1"
                 onchange="opacitycontroller(this.value, ['#fat1'])"
@@ -530,7 +516,7 @@
                 class="form-range"
                 min="0"
                 max="1"
-                step="0.1"
+                step="1"
                 id="customRange3"
                 value="1"
                 onchange="opacitycontroller(this.value, ['#sanvan1'])"
