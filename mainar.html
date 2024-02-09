@@ -4,7 +4,7 @@
   <head>
     <title>CardioAR</title>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -20,43 +20,41 @@
       #cell {
         height: 80vh;
       }
-      @media screen and (max-width: 1000px) { /* Adjust the max-width as needed */
+      @media screen and (max-width: 1000px) {
+        /* Adjust the max-width as needed */
         #cell {
-            height: 50vh;
+          height: 50vh;
         }
-    }
+      }
     </style>
   </head>
 
   <body>
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-      crossorigin="anonymous"
-    ></script>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="https://aruniankur.github.io/CardioARInsights/">CardioAR</a>
+        <img
+          src="files/untitled.png"
+          alt="Your Icon"
+          width="30"
+          height="30"
+          class="d-inline-block align-text-top"
+        />
+        <a class="navbar-brand mx-2" href="/CardioARInsights">CardioAR</a>
         <button
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="https://aruniankur.github.io/CardioARInsights/">Home</a>
+              <a class="nav-link active" aria-current="page" href="/CardioARInsights">Home</a>
             </li>
             <li class="nav-item">
               <a
@@ -67,10 +65,7 @@
               >
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                href="files/normalheart.html"
+              <a class="nav-link active" aria-current="page" href="mainar.html"
                 >Healthy Heart</a
               >
             </li>
@@ -101,10 +96,14 @@
         height="100%"
       ></iframe>
     </div>
-    <div class="container text-center my-5">
+    <div class="container my-5">
       <h1>Settings and Info</h1>
+      <p>
+        The objective of this AR application is to provide a deeper
+        understanding of the heart.
+      </p>
       <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-12">
           <div class="p-3 bg-primary text-light"><h4>About this Page</h4></div>
           <p>Overall Opacity</p>
           <div
@@ -152,22 +151,11 @@
             >
           </div>
           <br />
-          <br />
-        </div>
-        <div class="col-lg-6">
-          <div class="p-3 bg-primary text-light">
-            <h4>Motivation and How to Use</h4>
-          </div>
-          <div class="container mt-3">
-            <p>
-              The objective of this AR application is to provide a deeper understanding of the heart. 
-            </p>
-          </div>
         </div>
       </div>
     </div>
     <div>
-      <div class="container text-center my-3">
+      <div class="container my-3">
         <h2>Settings</h2>
         <div class="row">
           <div class="col-lg-6">
@@ -179,51 +167,113 @@
             >
               Basic
             </div>
-            <div id="demo1" class="collapse">
-            </div>
+            <div id="demo1" class="collapse"></div>
             <div id="demo1" class="collapse">
               <label for="customRange3" class="form-label">Heart Muscles</label>
-              <input
-                type="range"
-                class="form-range"
-                min="0"
-                max="1"
-                step="1"
-                value="1"
-                id="customRange3"
-                onchange="opacitycontroller(this.value, ['#la1','#ra1','#lv1','#rv1'])"
-              />
+              <br />
+              <div
+                class="btn-group"
+                role="group"
+                aria-label="Basic radio toggle button group"
+              >
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="btnradio1"
+                  id="btnradio11"
+                  autocomplete="off"
+                  checked
+                  onclick="opacitycontroller(0, ['#la1','#ra1','#lv1','#rv1'])"
+                />
+                <label class="btn btn-outline-primary" for="btnradio11"
+                  >Hide</label
+                >
+
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="btnradio1"
+                  id="btnradio13"
+                  autocomplete="off"
+                  onclick="opacitycontroller(1, ['#la1','#ra1','#lv1','#rv1'])"
+                />
+                <label class="btn btn-outline-primary" for="btnradio13"
+                  >show</label
+                >
+              </div>
             </div>
             <div id="demo1" class="collapse">
               <label for="customRange3" class="form-label"
                 >Large Blood Vessels</label
               >
-              <input
-                type="range"
-                class="form-range"
-                min="0"
-                max="1"
-                step="1"
-                value="1"
-                id="customRange3"
-                onchange="opacitycontroller(this.value, ['#arota1','#venacava1','#ductus1','#pulmonaryartery1','#pulmonaryveins1'])"
-              />
+              <br />
+              <div
+                class="btn-group"
+                role="group"
+                aria-label="Basic radio toggle button group"
+              >
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="btnradio2"
+                  id="btnradio21"
+                  autocomplete="off"
+                  checked
+                  onclick="opacitycontroller(0, ['#arota1','#venacava1','#ductus1','#pulmonaryartery1','#pulmonaryveins1'])"
+                />
+                <label class="btn btn-outline-primary" for="btnradio21"
+                  >Hide</label
+                >
+
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="btnradio2"
+                  id="btnradio23"
+                  autocomplete="off"
+                  onclick="opacitycontroller(1, ['#arota1','#venacava1','#ductus1','#pulmonaryartery1','#pulmonaryveins1'])"
+                />
+                <label class="btn btn-outline-primary" for="btnradio23"
+                  >show</label
+                >
+              </div>
             </div>
 
             <div id="demo1" class="collapse">
               <label for="customRange3" class="form-label"
                 >Small blood Vessels</label
               >
-              <input
-                type="range"
-                class="form-range"
-                min="0"
-                max="1"
-                step="1"
-                value="1"
-                id="customRange3"
-                onchange="opacitycontroller(this.value, ['#red1','#blue1'])"
-              />
+              <br />
+              <div
+                class="btn-group"
+                role="group"
+                aria-label="Basic radio toggle button group"
+              >
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="btnradio3"
+                  id="btnradio31"
+                  autocomplete="off"
+                  checked
+                  onclick="opacitycontroller(0,['#red1','#blue1'])"
+                />
+                <label class="my-2 btn btn-outline-primary" for="btnradio31"
+                  >Hide</label
+                >
+
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="btnradio3"
+                  id="btnradio33"
+                  autocomplete="off"
+                  onclick="opacitycontroller(1,['#red1','#blue1'])"
+                />
+                <label class="my-2 btn btn-outline-primary" for="btnradio33"
+                  >show</label
+                >
+              </div>
             </div>
           </div>
           <div class="col-lg-6">
@@ -231,52 +281,113 @@
               type="button"
               class="p-3 bg-primary bg-gradient text-white rounded-3 border-bottom"
               data-bs-toggle="collapse"
-              data-bs-target="#demo1"
+              data-bs-target="#demo4"
             >
               Basic
             </div>
-            <div id="demo1" class="collapse">
-            </div>
-            <div id="demo1" class="collapse">
+            <div id="demo4" class="collapse">
               <label for="customRange3" class="form-label">SAN And VAN</label>
-              <input
-                type="range"
-                class="form-range"
-                min="0"
-                max="1"
-                step="1"
-                id="customRange3"
-                value="1"
-                onchange="opacitycontroller(this.value, ['#sanvan1'])"
-              />
+              <br />
+              <div
+                class="btn-group"
+                role="group"
+                aria-label="Basic radio toggle button group"
+              >
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="btnradio4"
+                  id="btnradio41"
+                  autocomplete="off"
+                  checked
+                  onclick="opacitycontroller(0,['#sanvan1'])"
+                />
+                <label class="my-2 btn btn-outline-primary" for="btnradio41"
+                  >Hide</label
+                >
+
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="btnradio4"
+                  id="btnradio44"
+                  autocomplete="off"
+                  onclick="opacitycontroller(1,['#sanvan1'])"
+                />
+                <label class="my-2 btn btn-outline-primary" for="btnradio44"
+                  >show</label
+                >
+              </div>
             </div>
-            <div id="demo1" class="collapse">
+            <div id="demo4" class="collapse">
               <label for="customRange3" class="form-label">Fat Deposit</label>
-              <input
-                type="range"
-                class="form-range"
-                min="0"
-                max="1"
-                step="1"
-                id="customRange3"
-                value="1"
-                onchange="opacitycontroller(this.value, ['#fat1'])"
-              />
+              <br />
+              <div
+                class="btn-group"
+                role="group"
+                aria-label="Basic radio toggle button group"
+              >
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="btnradio5"
+                  id="btnradio51"
+                  autocomplete="off"
+                  checked
+                  onclick="opacitycontroller(0,['#fat1'])"
+                />
+                <label class="my-2 btn btn-outline-primary" for="btnradio51"
+                  >Hide</label
+                >
+
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="btnradio5"
+                  id="btnradio53"
+                  autocomplete="off"
+                  onclick="opacitycontroller(1,['#fat1'])"
+                />
+                <label class="my-2 btn btn-outline-primary" for="btnradio53"
+                  >show</label
+                >
+              </div>
             </div>
-            <div id="demo1" class="collapse">
+            <div id="demo4" class="collapse">
               <label for="customRange3" class="form-label"
                 >Internal Parts</label
               >
-              <input
-                type="range"
-                class="form-range"
-                min="0"
-                max="1"
-                step="1"
-                value="1"
-                id="customRange3"
-                onchange="opacitycontroller(this.value, ['#pv11','#pv21','#pv31','#pv41','#pv51','#pv61','#bc11','#bc21','#tc11','#tc21','#tc31','#pm1'])"
-              />
+              <br />
+              <div
+                class="btn-group"
+                role="group"
+                aria-label="Basic radio toggle button group"
+              >
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="btnradio6"
+                  id="btnradio61"
+                  autocomplete="off"
+                  checked
+                  onclick="opacitycontroller(0,['#pv11','#pv21','#pv31','#pv41','#pv51','#pv61','#bc11','#bc21','#tc11','#tc21','#tc31','#pm1'])"
+                />
+                <label class="my-2 btn btn-outline-primary" for="btnradio61"
+                  >Hide</label
+                >
+
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="btnradio6"
+                  id="btnradio63"
+                  autocomplete="off"
+                  onclick="opacitycontroller(1,['#pv11','#pv21','#pv31','#pv41','#pv51','#pv61','#bc11','#bc21','#tc11','#tc21','#tc31','#pm1'])"
+                />
+                <label class="my-2 btn btn-outline-primary" for="btnradio63"
+                  >show</label
+                >
+              </div>
             </div>
           </div>
         </div>
@@ -286,67 +397,150 @@
               type="button"
               class="p-3 bg-primary bg-gradient text-white rounded-3 border-bottom"
               data-bs-toggle="collapse"
-              data-bs-target="#demo3"
+              data-bs-target="#demo12"
             >
               Heart Muscles
             </div>
-            <div id="demo3" class="collapse">
-            </div>
-            <div id="demo3" class="collapse">
+            <div id="demo12" class="collapse"></div>
+            <div id="demo12" class="collapse">
               <label for="customRange3" class="form-label">Left Atrium</label>
-              <input
-                type="range"
-                class="form-range"
-                min="0"
-                max="1"
-                step="1"
-                id="customRange3"
-                value="1"
-                onchange="opacitycontroller(this.value, ['#la1'])"
-              />
+              <br />
+              <div
+                class="btn-group"
+                role="group"
+                aria-label="Basic radio toggle button group"
+              >
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="btnradio7"
+                  id="btnradio71"
+                  autocomplete="off"
+                  checked
+                  onclick="opacitycontroller(0,['#la1'])"
+                />
+                <label class="my-2 btn btn-outline-primary" for="btnradio71"
+                  >Hide</label
+                >
+
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="btnradio7"
+                  id="btnradio74"
+                  autocomplete="off"
+                  onclick="opacitycontroller(1,['#la1'])"
+                />
+                <label class="my-2 btn btn-outline-primary" for="btnradio74"
+                  >show</label
+                >
+              </div>
             </div>
-            <div id="demo3" class="collapse">
+            <div id="demo12" class="collapse">
               <label for="customRange3" class="form-label">Right Atrium</label>
-              <input
-                type="range"
-                class="form-range"
-                min="0"
-                max="1"
-                step="1"
-                id="customRange3"
-                value="1"
-                onchange="opacitycontroller(this.value, ['#ra1'])"
-              />
+              <br />
+              <div
+                class="btn-group"
+                role="group"
+                aria-label="Basic radio toggle button group"
+              >
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="btnradio8"
+                  id="btnradio81"
+                  autocomplete="off"
+                  checked
+                  onclick="opacitycontroller(0,['#ra1'])"
+                />
+                <label class="my-2 btn btn-outline-primary" for="btnradio81"
+                  >Hide</label
+                >
+
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="btnradio8"
+                  id="btnradio84"
+                  autocomplete="off"
+                  onclick="opacitycontroller(1,['#ra1'])"
+                />
+                <label class="my-2 btn btn-outline-primary" for="btnradio84"
+                  >show</label
+                >
+              </div>
             </div>
-            <div id="demo3" class="collapse">
+            <div id="demo12" class="collapse">
               <label for="customRange3" class="form-label"
                 >Left Ventricle</label
               >
-              <input
-                type="range"
-                class="form-range"
-                min="0"
-                max="1"
-                step="1"
-                id="customRange3"
-                value="1"
-                onchange="opacitycontroller(this.value, ['#lv1'])"
-              />
+              <br />
+              <div
+                class="btn-group"
+                role="group"
+                aria-label="Basic radio toggle button group"
+              >
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="btnradio9"
+                  id="btnradio91"
+                  autocomplete="off"
+                  checked
+                  onclick="opacitycontroller(0,['#lv1'])"
+                />
+                <label class="my-2 btn btn-outline-primary" for="btnradio91"
+                  >Hide</label
+                >
+
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="btnradio9"
+                  id="btnradio94"
+                  autocomplete="off"
+                  onclick="opacitycontroller(1,['#lv1'])"
+                />
+                <label class="my-2 btn btn-outline-primary" for="btnradio94"
+                  >show</label
+                >
+              </div>
             </div>
-            <div id="demo3" class="collapse">
+            <div id="demo12" class="collapse">
               <label for="customRange3" class="form-label"
                 >Right Ventricle</label
               >
-              <input
-                type="range"
-                class="form-range"
-                min="0"
-                max="1"
-                step="1"
-                id="customRange3"
-                value="1"
-                onchange="opacitycontroller(this.value, ['#rv1'])"
-              />
+              <br />
+              <div
+                class="btn-group"
+                role="group"
+                aria-label="Basic radio toggle button group"
+              >
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="btnradio10"
+                  id="btnradio101"
+                  autocomplete="off"
+                  checked
+                  onclick="opacitycontroller(0,['#rv1'])"
+                />
+                <label class="my-2 btn btn-outline-primary" for="btnradio101"
+                  >Hide</label
+                >
+
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="btnradio10"
+                  id="btnradio104"
+                  autocomplete="off"
+                  onclick="opacitycontroller(1,['#rv1'])"
+                />
+                <label class="my-2 btn btn-outline-primary" for="btnradio104"
+                  >show</label
+                >
+              </div>
             </div>
           </div>
           <div class="col-lg-6">
@@ -358,63 +552,146 @@
             >
               Large Blood vessels
             </div>
-            <div id="demo3" class="collapse">
-            </div>
+            <div id="demo3" class="collapse"></div>
             <div id="demo3" class="collapse">
               <label for="customRange3" class="form-label">Vena Cava</label>
-              <input
-                type="range"
-                class="form-range"
-                min="0"
-                max="1"
-                step="1"
-                id="customRange3"
-                value="1"
-                onchange="opacitycontroller(this.value, ['#venacava1'])"
-              />
+              <br />
+              <div
+                class="btn-group"
+                role="group"
+                aria-label="Basic radio toggle button group"
+              >
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="btnradio11"
+                  id="btnradio111"
+                  autocomplete="off"
+                  checked
+                  onclick="opacitycontroller(0,['#venacava1'])"
+                />
+                <label class="my-2 btn btn-outline-primary" for="btnradio111"
+                  >Hide</label
+                >
+
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="btnradio11"
+                  id="btnradio114"
+                  autocomplete="off"
+                  onclick="opacitycontroller(1,['#venacava1'])"
+                />
+                <label class="my-2 btn btn-outline-primary" for="btnradio114"
+                  >show</label
+                >
+              </div>
             </div>
             <div id="demo3" class="collapse">
               <label for="customRange3" class="form-label"
                 >pulmonary Artery</label
               >
-              <input
-                type="range"
-                class="form-range"
-                min="0"
-                max="1"
-                step="1"
-                id="customRange3"
-                value="1"
-                onchange="opacitycontroller(this.value, ['#pulmonaryartery1'])"
-              />
+              <br />
+              <div
+                class="btn-group"
+                role="group"
+                aria-label="Basic radio toggle button group"
+              >
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="12"
+                  id="121"
+                  autocomplete="off"
+                  checked
+                  onclick="opacitycontroller(0,['#pulmonaryartery1'])"
+                />
+                <label class="my-2 btn btn-outline-primary" for="121"
+                  >Hide</label
+                >
+
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="12"
+                  id="124"
+                  autocomplete="off"
+                  onclick="opacitycontroller(1,['#pulmonaryartery1'])"
+                />
+                <label class="my-2 btn btn-outline-primary" for="124"
+                  >show</label
+                >
+              </div>
             </div>
             <div id="demo3" class="collapse">
               <label for="customRange3" class="form-label"
                 >pulmonary Veins</label
               >
-              <input
-                type="range"
-                class="form-range"
-                min="0"
-                max="1"
-                step="1"
-                id="customRange3"
-                value="1"
-                onchange="opacitycontroller(this.value, ['#pulmonaryveins1'])"
-              />
+              <br />
+              <div
+                class="btn-group"
+                role="group"
+                aria-label="Basic radio toggle button group"
+              >
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="btnradio13"
+                  id="btnradio131"
+                  autocomplete="off"
+                  checked
+                  onclick="opacitycontroller(0,['#pulmonaryveins1'])"
+                />
+                <label class="my-2 btn btn-outline-primary" for="btnradio131"
+                  >Hide</label
+                >
+
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="btnradio13"
+                  id="btnradio134"
+                  autocomplete="off"
+                  onclick="opacitycontroller(1,['#pulmonaryveins1'])"
+                />
+                <label class="my-2 btn btn-outline-primary" for="btnradio134"
+                  >show</label
+                >
+              </div>
             </div>
             <div id="demo3" class="collapse">
               <label for="customRange3" class="form-label">Arota</label>
-              <input
-                type="range"
-                class="form-range"
-                min="0"
-                max="1"
-                step="1"
-                id="customRange3"
-                value="1"
-                onchange="opacitycontroller(this.value, ['#arota1','#ductus1'])"
-              />
+              <br />
+              <div
+                class="btn-group"
+                role="group"
+                aria-label="Basic radio toggle button group"
+              >
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="btnradio14"
+                  id="btnradio141"
+                  autocomplete="off"
+                  checked
+                  onclick="opacitycontroller(0,['#arota1','#ductus1'])"
+                />
+                <label class="my-2 btn btn-outline-primary" for="btnradio141"
+                  >Hide</label
+                >
+
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="btnradio14"
+                  id="btnradio144"
+                  autocomplete="off"
+                  onclick="opacitycontroller(1,['#arota1','#ductus1'])"
+                />
+                <label class="my-2 btn btn-outline-primary" for="btnradio144"
+                  >show</label
+                >
+              </div>
             </div>
           </div>
         </div>
@@ -428,52 +705,114 @@
             >
               Internal Parts
             </div>
-            <div id="demo5" class="collapse">
-            </div>
+            <div id="demo5" class="collapse"></div>
             <div id="demo5" class="collapse">
               <label for="customRange3" class="form-label"
                 >Aortic Valves and Pulmonary Valve</label
               >
-              <input
-                type="range"
-                class="form-range"
-                min="0"
-                max="1"
-                step="1"
-                id="customRange3"
-                value="1"
-                onchange="opacitycontroller(this.value, ['#pv11','#pv21','#pv31','#pv41','#pv51','#pv61'])"
-              />
+              <br />
+              <div
+                class="btn-group"
+                role="group"
+                aria-label="Basic radio toggle button group"
+              >
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="btnradio42"
+                  id="btnradio421"
+                  autocomplete="off"
+                  checked
+                  onclick="opacitycontroller(0,['#pv11','#pv21','#pv31','#pv41','#pv51','#pv61'])"
+                />
+                <label class="my-2 btn btn-outline-primary" for="btnradio421"
+                  >Hide</label
+                >
+
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="btnradio42"
+                  id="btnradio424"
+                  autocomplete="off"
+                  onclick="opacitycontroller(1,['#pv11','#pv21','#pv31','#pv41','#pv51','#pv61'])"
+                />
+                <label class="my-2 btn btn-outline-primary" for="btnradio424"
+                  >show</label
+                >
+              </div>
             </div>
             <div id="demo5" class="collapse">
               <label for="customRange3" class="form-label"
                 >Mitral Valve and Tricuspid Valve</label
               >
-              <input
-                type="range"
-                class="form-range"
-                min="0"
-                max="1"
-                step="1"
-                id="customRange3"
-                value="1"
-                onchange="opacitycontroller(this.value, ['#bc11','#bc21','#tc11','#tc21','#tc31'])"
-              />
+              <br />
+              <div
+                class="btn-group"
+                role="group"
+                aria-label="Basic radio toggle button group"
+              >
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="btnradio44"
+                  id="btnradio441"
+                  autocomplete="off"
+                  checked
+                  onclick="opacitycontroller(0,['#bc11','#bc21','#tc11','#tc21','#tc31'])"
+                />
+                <label class="my-2 btn btn-outline-primary" for="btnradio441"
+                  >Hide</label
+                >
+
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="btnradio44"
+                  id="btnradio444"
+                  autocomplete="off"
+                  onclick="opacitycontroller(1,['#bc11','#bc21','#tc11','#tc21','#tc31'])"
+                />
+                <label class="my-2 btn btn-outline-primary" for="btnradio444"
+                  >show</label
+                >
+              </div>
             </div>
             <div id="demo5" class="collapse">
               <label for="customRange3" class="form-label"
                 >papilary Muscle</label
               >
-              <input
-                type="range"
-                class="form-range"
-                min="0"
-                max="1"
-                step="1"
-                id="customRange3"
-                value="1"
-                onchange="opacitycontroller(this.value, ['#pm1'])"
-              />
+              <br />
+              <div
+                class="btn-group"
+                role="group"
+                aria-label="Basic radio toggle button group"
+              >
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="btnradio142"
+                  id="btnradio1421"
+                  autocomplete="off"
+                  checked
+                  onclick="opacitycontroller(0,['#pm1'])"
+                />
+                <label class="my-2 btn btn-outline-primary" for="btnradio1421"
+                  >Hide</label
+                >
+
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="btnradio142"
+                  id="btnradio1424"
+                  autocomplete="off"
+                  onclick="opacitycontroller(1,['#pm1'])"
+                />
+                <label class="my-2 btn btn-outline-primary" for="btnradio1424"
+                  >show</label
+                >
+              </div>
             </div>
           </div>
           <div class="col-lg-6">
@@ -481,56 +820,179 @@
               type="button"
               class="p-3 bg-primary bg-gradient text-white rounded-3 border-bottom"
               data-bs-toggle="collapse"
-              data-bs-target="#demo5"
+              data-bs-target="#demo7"
             >
               Outer Small parts
             </div>
-            <div id="demo5" class="collapse">
-            </div>
-            <div id="demo5" class="collapse">
+            <div id="demo7" class="collapse"></div>
+            <div id="demo7" class="collapse">
               <label for="customRange3" class="form-label"
                 >Heart Circulatory System</label
               >
-              <input
-                type="range"
-                class="form-range"
-                min="0"
-                max="1"
-                step="1"
-                id="customRange3"
-                value="1"
-                onchange="opacitycontroller(this.value, ['#red1','#blue1'])"
-              />
+              <br />
+              <div
+                class="btn-group"
+                role="group"
+                aria-label="Basic radio toggle button group"
+              >
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="btnradio54"
+                  id="btnradio541"
+                  autocomplete="off"
+                  checked
+                  onclick="opacitycontroller(0, ['#red1','#blue1'])"
+                />
+                <label class="my-2 btn btn-outline-primary" for="btnradio541"
+                  >Hide</label
+                >
+
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="btnradio54"
+                  id="btnradio544"
+                  autocomplete="off"
+                  onclick="opacitycontroller(1, ['#red1','#blue1'])"
+                />
+                <label class="my-2 btn btn-outline-primary" for="btnradio544"
+                  >show</label
+                >
+              </div>
             </div>
-            <div id="demo5" class="collapse">
+            <div id="demo7" class="collapse">
               <label for="customRange3" class="form-label">Fat Deposit</label>
-              <input
-                type="range"
-                class="form-range"
-                min="0"
-                max="1"
-                step="1"
-                id="customRange3"
-                value="1"
-                onchange="opacitycontroller(this.value, ['#fat1'])"
-              />
+              <br />
+              <div
+                class="btn-group"
+                role="group"
+                aria-label="Basic radio toggle button group"
+              >
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="btnradio48"
+                  id="btnradio481"
+                  autocomplete="off"
+                  checked
+                  onclick="opacitycontroller(0,['#fat1'])"
+                />
+                <label class="my-2 btn btn-outline-primary" for="btnradio481"
+                  >Hide</label
+                >
+
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="btnradio48"
+                  id="btnradio484"
+                  autocomplete="off"
+                  onclick="opacitycontroller(1,['#fat1'])"
+                />
+                <label class="my-2 btn btn-outline-primary" for="btnradio484"
+                  >show</label
+                >
+              </div>
             </div>
-            <div id="demo5" class="collapse">
+            <div id="demo7" class="collapse">
               <label for="customRange3" class="form-label">SAN - VAN</label>
-              <input
-                type="range"
-                class="form-range"
-                min="0"
-                max="1"
-                step="1"
-                id="customRange3"
-                value="1"
-                onchange="opacitycontroller(this.value, ['#sanvan1'])"
-              />
+              <br />
+              <div
+                class="btn-group"
+                role="group"
+                aria-label="Basic radio toggle button group"
+              >
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="btnradio899"
+                  id="btnradio8991"
+                  autocomplete="off"
+                  checked
+                  onclick="opacitycontroller(0,['#sanvan1'])"
+                />
+                <label class="my-2 btn btn-outline-primary" for="btnradio8991"
+                  >Hide</label
+                >
+
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="btnradio899"
+                  id="btnradio8994"
+                  autocomplete="off"
+                  onclick="opacitycontroller(1,['#sanvan1'])"
+                />
+                <label class="my-2 btn btn-outline-primary" for="btnradio8994"
+                  >show</label
+                >
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <footer class="bd-footer py-4 py-md-5 mt-5 bg-body-tertiary">
+        <div class="container py-4 py-md-5 px-4 px-md-3 text-body-secondary">
+          <div class="row">
+            <div class="col-lg-3 mb-3">
+              <a
+                class="d-inline-flex align-items-center mb-2 text-body-emphasis text-decoration-none"
+                href="/"
+                aria-label="Bootstrap"
+              >
+                <span class="fs-5">CardioAR Insights</span>
+              </a>
+              <ul class="list-unstyled small">
+                <li class="mb-2"></li>
+              </ul>
+            </div>
+            <div class="col-6 col-lg-2 offset-lg-1 mb-3">
+              <h5>Links</h5>
+              <ul class="list-unstyled">
+                <li class="mb-2">
+                  <a href="https://aruniankur.github.io/CardioARInsights/"
+                    >CardioAR</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="https://github.com/aruniankur/CardioARInsights"
+                    >Github</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="http://www.ivarlab.iitkgp.ac.in">iVAR Lab</a>
+                </li>
+                <li class="mb-2">
+                  <a href="https://www.iitkgp.ac.in">IIT kharagpur</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-6 col-lg-2 mb-3">
+              <h5>Links</h5>
+              <ul class="list-unstyled">
+                <li class="mb-2">
+                  <a
+                    href="https://stemkoski.github.io/AR-Examples/markers/hiro.png"
+                    >AR Marker</a
+                  >
+                </li>
+                <li class="mb-2"><a href="mainar.html">Healthy Heart</a></li>
+                <li class="mb-2">
+                  <a href="https://aruniankur.github.io/heartmodel2/"
+                    >3D onScreen</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="https://www.linkedin.com/in/aruni-ankur-748957249/"
+                    >Developer</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
 
       <script>
         const urlParams = new URLSearchParams(window.location.search);
@@ -545,7 +1007,7 @@
               const user = data[data1];
               ///console.log(data);
               iframe.src = user.url;
-            })
+            });
         }
 
         // Function to log the slider value
@@ -599,5 +1061,15 @@
       }
       //https://cpetry.github.io/NormalMap-Online/
     </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
